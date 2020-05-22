@@ -22,5 +22,8 @@ class CacheServiceTest {
         log.debug(account1.toString());
         Account account2 = cacheService.getAccount(1);
         log.debug(account2.toString());
+        cacheService.expireAccount(2);
+        Account account3 = cacheService.getAccount(2);
+        log.debug(account3.toString());
     }
 }

@@ -1,6 +1,7 @@
 package com.example.demo.cache;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -14,4 +15,11 @@ public class CacheServiceImpl implements CacheService {
     public Account getAccount(int no) {
         return accountRepository.getAccount(no);
     }
+
+
+    @Override
+    @CacheEvict(value = "Account", key="#no")
+    public void expireAccount(int no) {
+    }
+
 }
