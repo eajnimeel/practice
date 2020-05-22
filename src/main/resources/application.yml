@@ -1,0 +1,17 @@
+debug: false
+
+logging:
+  level:
+    root: info
+    com.example.demo: debug
+
+spring:
+  cache:
+    redis:
+      time-to-live: 360
+      key-prefix: demo_
+
+  redis:
+    host: 192.168.16.36
+    port: 6379
+    database: 11
