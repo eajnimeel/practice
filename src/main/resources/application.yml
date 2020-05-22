@@ -6,12 +6,17 @@ logging:
     com.example.demo: debug
 
 spring:
+  # 스프링 캐시 설정
   cache:
     redis:
       time-to-live: 360
       key-prefix: demo_
-
+  # redis 접속 정보
   redis:
     host: 192.168.16.36
     port: 6379
     database: 11
+
+  # 이메일
+  mail:
+    host: 192.168.16.36
